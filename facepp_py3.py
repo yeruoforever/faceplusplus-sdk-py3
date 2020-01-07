@@ -143,7 +143,7 @@ class _APIProxy(object):
 
         if self._api.decode_result:
             try:
-                ret = json.loads(ret.decode("utf-8"))
+                ret = json.loads(ret)
             except Exception as e:
                 raise APIError(-1, self._urlbase, 'json decode error, value={0!r}'.format(ret))
         return ret
